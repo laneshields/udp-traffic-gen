@@ -111,7 +111,7 @@ async function startTraffic() {
         });
 
         if (res.ok) {
-            applyStatus({ running: true, remaining: 60, active_streams: streams.map(s => s.name) });
+            applyStatus({ running: true, remaining: 300, active_streams: streams.map(s => s.name) });
             pollTimer = setInterval(fetchStatus, 1000);
         } else {
             const err = await res.json();

@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 PAYLOAD_SIZE = 1000
 PAYLOAD = bytes(PAYLOAD_SIZE)
-DURATION = 60  # seconds
+DURATION = 300  # seconds
 
 _state = {
     'running': False,
