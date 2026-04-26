@@ -1,0 +1,72 @@
+# UDP Traffic Generator Configuration
+# Edit the destination IPs and ports below.
+# Changes take effect on the next traffic run.
+# These settings are NOT exposed in the web GUI.
+#
+# priority must be one of: high, medium, low, best-effort
+
+destinations:
+  - name: "High Priority AWS"
+    ip: "10.1.101.10"
+    port: 4444
+    priority: high
+  - name: "Medium Priority AWS"
+    ip: "10.1.101.10"
+    port: 3333
+    priority: medium
+  - name: "Low Priority AWS"
+    ip: "10.1.101.10"
+    port: 2222
+    priority: low
+  - name: "Best Effort Priority AWS"
+    ip: "10.1.101.10"
+    port: 1111
+    priority: best-effort
+  - name: "High Priority TELE"
+    ip: "10.2.0.10"
+    port: 4444
+    priority: high
+  - name: "Medium Priority TELE"
+    ip: "10.2.0.10"
+    port: 3333
+    priority: medium
+  - name: "Low Priority TELE"
+    ip: "10.2.0.10"
+    port: 2222
+    priority: low
+  - name: "Best Effort Priority TELE"
+    ip: "10.2.0.10"
+    port: 1111
+    priority: best-effort
+  - name: "High Priority REM1"
+    ip: "10.1.11.10"
+    port: 4444
+    priority: high
+  - name: "Medium Priority REM1"
+    ip: "10.1.11.10"
+    port: 3333
+    priority: medium
+  - name: "Low Priority REM1"
+    ip: "10.1.11.10"
+    port: 2222
+    priority: low
+  - name: "Best Effort Priority REM1"
+    ip: "10.1.11.10"
+    port: 1111
+    priority: best-effort
+  - name: "High Priority REM2"
+    ip: "10.1.22.10"
+    port: 4444
+    priority: high
+  - name: "Medium Priority REM2"
+    ip: "10.1.22.10"
+    port: 3333
+    priority: medium
+  - name: "Low Priority REM2"
+    ip: "10.1.22.10"
+    port: 2222
+    priority: low
+  - name: "Best Effort Priority REM2"
+    ip: "10.1.22.10"
+    port: 1111
+    priority: best-effort

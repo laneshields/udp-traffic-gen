@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod +x /Users/lshields/udp-traffic-gen/setup.sh /Users/lshields/udp-traffic-gen/run.sh)"
+    ]
+  }
+}

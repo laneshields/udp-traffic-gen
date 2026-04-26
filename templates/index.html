@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP Traffic Generator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>UDP Traffic Generator</h1>
+    </header>
+
+    <div class="container">
+
+        <!-- Stream Configuration -->
+        <div class="card">
+            <h2>Stream Configuration</h2>
+            <table class="stream-table">
+                <thead>
+                    <tr>
+                        <th class="col-check">Active</th>
+                        <th>Stream</th>
+                        <th>Bandwidth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="center"><input type="checkbox" id="check-high" checked></td>
+                        <td>
+                            <label for="check-high">
+                                High <span class="badge badge-high">HIGH</span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="bw-group">
+                                <input type="number" id="bw-high" value="500" min="1" step="any">
+                                <select id="unit-high">
+                                    <option value="kbps" selected>Kbps</option>
+                                    <option value="mbps">Mbps</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center"><input type="checkbox" id="check-medium" checked></td>
+                        <td>
+                            <label for="check-medium">
+                                Medium <span class="badge badge-medium">MED</span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="bw-group">
+                                <input type="number" id="bw-medium" value="1" min="1" step="any">
+                                <select id="unit-medium">
+                                    <option value="kbps">Kbps</option>
+                                    <option value="mbps" selected>Mbps</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center"><input type="checkbox" id="check-low" checked></td>
+                        <td>
+                            <label for="check-low">
+                                Low <span class="badge badge-low">LOW</span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="bw-group">
+                                <input type="number" id="bw-low" value="1" min="1" step="any">
+                                <select id="unit-low">
+                                    <option value="kbps">Kbps</option>
+                                    <option value="mbps" selected>Mbps</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="center"><input type="checkbox" id="check-best-effort" checked></td>
+                        <td>
+                            <label for="check-best-effort">
+                                Best Effort <span class="badge badge-be">BE</span>
+                            </label>
+                        </td>
+                        <td>
+                            <div class="bw-group">
+                                <input type="number" id="bw-best-effort" value="1" min="1" step="any">
+                                <select id="unit-best-effort">
+                                    <option value="kbps">Kbps</option>
+                                    <option value="mbps" selected>Mbps</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Control -->
+        <div class="card">
+            <h2>Control</h2>
+            <div class="control-row">
+                <button id="start-btn" class="btn-primary">&#9654; Start Traffic</button>
+                <button id="stop-btn" class="btn-danger" disabled>&#9632; Stop</button>
+                <span class="hint">Runs for 60 seconds</span>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div class="card">
+            <h2>Status</h2>
+            <div class="status-row">
+                <div class="status-indicator">
+                    <span class="status-dot" id="status-dot"></span>
+                    <span class="status-label" id="status-label">Idle</span>
+                </div>
+                <div class="countdown" id="countdown" style="display:none">
+                    <span class="countdown-value" id="countdown-value">1:00</span>
+                    <span class="countdown-unit">remaining</span>
+                </div>
+            </div>
+            <div class="active-streams" id="active-streams-row" style="display:none">
+                <div class="section-label">Active Streams</div>
+                <div id="active-streams-list" class="tag-list"></div>
+            </div>
+            <div class="destinations-section">
+                <div class="section-label">Target Destinations</div>
+                <div id="destinations-list" class="destinations-grid"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
