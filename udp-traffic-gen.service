@@ -4,9 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-User=labuser
-WorkingDirectory=/home/labuser/udp-traffic-gen
-ExecStart=/home/labuser/udp-traffic-gen/venv/bin/python3 /home/labuser/udp-traffic-gen/app.py
+WorkingDirectory=/root/udp-traffic-gen
+ExecStart=/root/udp-traffic-gen/venv/bin/python3 /root/udp-traffic-gen/app.py
 Restart=on-failure
 RestartSec=5
 
